@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fintech_widgets/search/search_stock.dart';
 import '../../widgets/carousel_view.dart';
 import '../../widgets/icon_board_view.dart';
 
@@ -74,6 +75,7 @@ class HomePage extends StatelessWidget {
                       height: 1.0,
                       color: Colors.black,
                     ),
+                    autofocus: false,
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search),
                       hintText: "搜索点儿啥",
@@ -81,6 +83,11 @@ class HomePage extends StatelessWidget {
                       fillColor: Colors.lightGreen,
                       contentPadding: EdgeInsets.all(5.0),
                     ),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return SearchPage();
+                      }));
+                    },
                   ),
                 ),
                 actions: <Widget>[
